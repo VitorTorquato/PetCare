@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             },
 
             {
-                path: '/succes',
+                path: '/success',
                 element: <Success/>
             },
 
