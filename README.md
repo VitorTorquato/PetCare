@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# React Shopping Cart App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **Single Page Application (SPA)** built with **React**, **TypeScript**, and **Tailwind CSS**. The app simulates a shopping cart where users can add, remove, and view product details. It uses the **Context API** for state management and **React Router DOM** for navigation. The products are fetched from a fake API, powered by `json-server`.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Features](#features)
+- [Demo](#demo)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Add/Remove Products to Cart**: Users can browse products and add or remove them from the cart.
+- **View Product Details**: Clicking on a product will show detailed information.
+- **Responsive Design**: The application is fully responsive and works on all screen sizes.
+- **Context API**: State management for products and cart is handled using React’s Context API.
+- **Client-side Routing**: Navigation between pages is seamless, thanks to React Router DOM.
+  
+## Demo
 
-- Configure the top-level `parserOptions` property like this:
+You can see the app running by following these steps:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Install `json-server` to simulate the backend.
+2. Run `json-server` and the React app simultaneously (instructions below).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technologies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **React**: JavaScript library for building user interfaces.
+- **TypeScript**: Adds static typing to JavaScript for better development experience.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+## Installation
+
+### Prerequisites
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v12.x or higher)
+- [npm](https://www.npmjs.com/get-npm) or [yarn](https://classic.yarnpkg.com/en/docs/install/)
+
+### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/VitorTorquato/PetCare
+   cd PetCare
+
+2. Install the dependencies:
+  npm install 
+
+3. Install json-server globally to simulate the backend:
+    npm install -g json-server
+
+5.In a second terminal, run json-server to serve the product data:
+   json-server --watch data.json
+
+4. In one terminal:
+  npm run dev
