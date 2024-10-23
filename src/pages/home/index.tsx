@@ -1,18 +1,32 @@
-
+import { useEffect, useState } from 'react'
 import heroImg from '../../assets/HeroImg.webp'
 
 import {Card} from '../../components/card'
-import {products} from '../../../data.json' 
+import { ProductProps } from '../../components/card'
+import { api } from '../../services/api'
 
 export function Home(){
-    
+
+    const [products,setProducts] = useState<ProductProps[]>([])
+
+
+        useEffect(() => {
+            async function getData(){
+                const response = await api.get('/products')
+                setProducts(response.data)
+            }
+
+            getData()
+
+        },[])
+
     return(
         <div
         className='bg-sky-200'
         >
 
         <div
-        className='w-full max-w-7xl h-screen flex flex-col items-center justify-center gap-4 px-2 mx-auto md:flex-row'
+        className='w-full max-w-7xl h-screen flex flex-col   items-center justify-center gap-4 px-2 mx-auto md:flex-row'
         >
 
             <div 
@@ -48,7 +62,10 @@ export function Home(){
                         return(
                             <Card 
                             key={product.id}
-                            product={product}
+                            id={product.id}
+                            cover={product.cover}
+                            title={product.title}
+                            price={product.price}
                             />
                         )
                     })

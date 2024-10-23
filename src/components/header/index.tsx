@@ -1,8 +1,22 @@
 import { FiShoppingCart , FiSearch} from "react-icons/fi";
 
+import { useContext } from "react";
+import { CartContext } from "../../contexts/cartContext";
+
 import { Link } from "react-router-dom";
 
+
+
+
 export function Header(){
+    
+    const {cartAmount} = useContext(CartContext);
+    
+   
+    
+   
+
+
     return(
 
         <header 
@@ -26,14 +40,7 @@ export function Header(){
                     >Shop Strore</span>
                 </div>
 
-                <div className="hidden sm:flex-1 sm:flex items-center gap-2 h-12 rounded-lg py-2 px-4 bg-slate-50">
-
-                    <FiSearch size={24} color="#121212"/>
-                    <input 
-                    className="border-none outline-none bg-transparent pt-1"
-                    placeholder="Search your pet food"
-                    type="text" />
-                </div>
+               
                 
                 <Link
                  to='/cart'
@@ -42,9 +49,13 @@ export function Header(){
                 
                     <FiShoppingCart size={35} color="#121212"/>
 
-                    <span
+                    {
+                        cartAmount > 0 && (
+                            <span
                     className="absolute -top-3 -right-3 px-2 pt-1 bg-sky-500 rounded-full w-6 h-6 flex items-center justify-center text-white text-xs"
-                    >2</span>
+                    >{cartAmount}</span>
+                        )
+                    }
                 </Link>
             </div>
 
