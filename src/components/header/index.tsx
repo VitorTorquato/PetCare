@@ -1,4 +1,4 @@
-import { FiShoppingCart , FiSearch} from "react-icons/fi";
+import { FiShoppingCart } from "react-icons/fi";
 
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cartContext";

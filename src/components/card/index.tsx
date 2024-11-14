@@ -2,12 +2,11 @@ import {BsCartPlus} from 'react-icons/bs'
 
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/cartContext';
-import { Link } from 'react-router-dom';
 
 import  toast  from 'react-hot-toast';
 
 
-interface ProductProps {
+export interface ProductProps{
     
         id:number;
         cover:string;
