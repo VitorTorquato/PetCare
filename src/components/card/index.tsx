@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import  toast  from 'react-hot-toast';
 
 
-export interface ProductProps {
+interface ProductProps {
     
         id:number;
         cover:string;
@@ -38,7 +38,6 @@ export function Card(product:ProductProps){
             <div 
             className='flex flex-col w-full  bg-sky-200 rounded-t-md rounded-b-2xl mt-12'
             >
-                <Link to={`/product/${product.id}`}>
                     <div 
                     className='border-b-2 border-slate-600 overflow-hidden'
                     >
@@ -46,7 +45,7 @@ export function Card(product:ProductProps){
                         className='object-cover  hover:scale-110'
                         src={product.cover} alt={product.title} />
                     </div>
-                </Link>
+                
                 
 
                 <div

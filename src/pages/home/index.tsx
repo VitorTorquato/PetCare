@@ -1,24 +1,15 @@
-import { useEffect, useState } from 'react'
 import heroImg from '../../assets/HeroImg.webp'
 
 import {Card} from '../../components/card'
-import { ProductProps } from '../../components/card'
-import { api } from '../../services/api'
+
+
+import {products} from '../../../data.json'
 
 export function Home(){
 
-    const [products,setProducts] = useState<ProductProps[]>([])
 
 
-        useEffect(() => {
-            async function getData(){
-                const response = await api.get('/products')
-                setProducts(response.data)
-            }
-
-            getData()
-
-        },[])
+       
 
     return(
         <div
